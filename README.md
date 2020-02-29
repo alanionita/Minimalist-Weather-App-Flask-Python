@@ -1,5 +1,7 @@
 # Minimalist Weather App
 
+![app screenshot](readme_assets/images/weather-app-screenshot.png)
+
 Built using this [FreeCodeCamp tutorial](https://www.freecodecamp.org/news/how-to-build-a-web-app-using-pythons-flask-and-google-app-engine-52b1bb82b221/) and the [Flask docs](https://flask.palletsprojects.com/en/1.1.x/quickstart/)
 
 # Why this project?
