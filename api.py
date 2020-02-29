@@ -5,7 +5,7 @@ import math
 import requests
 
 API_KEY = os.environ.get("API_KEY")
-API_URL = ('http://api.openweathermap.org/data/2.5/weather?q={}&appid={}')
+API_URL = ('http://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric')
 
 
 def get_weather_by_city(city):
