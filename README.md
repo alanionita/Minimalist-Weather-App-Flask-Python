@@ -44,6 +44,11 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+# Attributions
+
+* Tristan Ganry for the [FreeCodeCamp tutorial](https://www.freecodecamp.org/news/how-to-build-a-web-app-using-pythons-flask-and-google-app-engine-52b1bb82b221/)
+* Максим Ильюшин for the lovely background, as seen on this [Codepen](https://codepen.io/fsti73/pen/XWbbBda)
+
 # License
 
 [MIT](https://choosealicense.com/licenses/mit/)
