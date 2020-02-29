@@ -17,6 +17,7 @@ This is why I chose [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 - deploying a Flask application
 - deep dive into the Python syntax
 - handling dependencies in Python with pip3 and requierments.txt
+- Flask deployment on Serverless framework
 
 # Running the app
 
@@ -35,21 +36,93 @@ pip3 install -r requirements.txt
 
 ## Start the app
 
-```bash
-$ export API_KEY='YOUR_KEY_GOES_HERE'
-$ python run-app.py
+```zsh
+export API_KEY='YOUR_KEY_GOES_HERE'
+python run-app.py
 ```
+# Deployment
+
+## Install 
+
+Install the Serverless Framework plugins
+
+```zsh
+npm i
+```
+
+## Serve locally 
+
+Leverage the Serverless WSGI pluging to serve the app locally before deployment
+
+```zsh
+sls wsgi serve
+```
+
+## Pre-deploy
+
+Create a serverless.yml file
+
+```yml
+service: minimalist-weather-app
+
+provider:
+  name: aws
+  runtime: python3.7
+  stage: dev
+  region: your-region
+  memorySize: 128
+  environment:
+    API_KEY: "YOUR_KEY_GOES_HERE"
+
+plugins:
+  - serverless-wsgi
+  - serverless-python-requirements
+
+custom:
+  wsgi:
+    app: app.app
+    packRequirements: false
+
+functions:
+  app:
+    handler: wsgi.handler
+    events:
+      - http: ANY /
+      - http: "ANY {proxy+}"
+
+```
+
+## Deployment 
+
+Deploy using the Serverless Framework. 
+
+```zsh
+sls serve
+```
+It takes a while so go and make yourself a brew.
+
+![app screenshot](https://media.giphy.com/media/XEOdmFHVznCerkI6CI/giphy.gif)
+
+
+
+Done? Good! 🎉 
+
+Your enpoints will be there in the console.
+
+
+
+# Attributions
+
+* Tristan Ganry for the [FreeCodeCamp tutorial](https://www.freecodecamp.org/news/how-to-build-a-web-app-using-pythons-flask-and-google-app-engine-52b1bb82b221/)
+* Michal Haták for the [Serverless deployment guide](https://medium.com/@Twistacz/flask-serverless-api-in-aws-lambda-the-easy-way-a445a8805028)
+* Максим Ильюшин for the lovely background, as seen on this [Codepen](https://codepen.io/fsti73/pen/XWbbBda)
+* Rodney Dangerfield for [the coffee gif](https://giphy.com/gifs/rodneydangerfield-monday-back-to-school-rodney-dangerfield-XEOdmFHVznCerkI6CI/media)
 
 # Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-# Attributions
-
-* Tristan Ganry for the [FreeCodeCamp tutorial](https://www.freecodecamp.org/news/how-to-build-a-web-app-using-pythons-flask-and-google-app-engine-52b1bb82b221/)
-* Максим Ильюшин for the lovely background, as seen on this [Codepen](https://codepen.io/fsti73/pen/XWbbBda)
 
 # License
 
