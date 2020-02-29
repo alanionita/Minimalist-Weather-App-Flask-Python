@@ -201,3 +201,12 @@ dmypy.json
 # VSCode files
 
 .vscode/
+
+# Node 
+
+/node_modules
+
+# Serverless
+
+/.serverless
+serverless.yml
