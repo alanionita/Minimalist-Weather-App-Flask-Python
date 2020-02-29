@@ -14,6 +14,7 @@ This is why I chose [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 - handling environment variables
 - deploying a Flask application
 - deep dive into the Python syntax
+- handling dependencies in Python with pip3 and requierments.txt
 
 # Running the app
 
