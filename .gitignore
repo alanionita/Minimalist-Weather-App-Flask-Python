@@ -198,3 +198,6 @@ dmypy.json
     Blog
     About
 
+# VSCode files
+
+.vscode/
