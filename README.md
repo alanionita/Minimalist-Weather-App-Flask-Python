@@ -25,6 +25,10 @@ This is why I chose [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 
 * Python3
 * API key from [Open Weather Map](openweathermap.org)
+* [Serverless framework CLI](https://serverless.com/framework/docs/getting-started/) (only for deployment)
+* [Amazon Web Services](https://aws.amazon.com/) account (only for deployment)
+* [Amazon Web Services CLI](https://github.com/aws/aws-cli) connected to your account (only for deployment)
+* Optional - [Serverless Framework account](serverless.com/)
 
 ## Environment setup 
 
