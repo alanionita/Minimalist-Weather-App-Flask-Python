@@ -26,6 +26,20 @@ This is why I chose [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 * Python3
 * API key from [Open Weather Map](openweathermap.org)
 
+## Environment setup 
+
+Create a venv folder (on MacOS)
+
+```zsh
+python3 -m venv venv
+```
+
+Activate the environment
+
+```zsh
+. venv/bin/activate
+```
+
 ## Installation
 
 Use the package manager [pip3](https://pip.pypa.io/en/stable/) to install app dependencies.
